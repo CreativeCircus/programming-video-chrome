@@ -20,5 +20,6 @@ Read up on media elements here: https://developer.mozilla.org/en-US/docs/Web/HTM
 * Make a working progress bar (just the visual; making it draggable is very difficult)
 
 # Bonus
+* Add CSS or JS animation between the states of buttons (play to pause, mute to unmute, etc)
 * Make the progress bar draggable, so users can jump to specific points in the video
 * Make a list of links to important points in the video, like chapters, and have the links jump to those exact times
