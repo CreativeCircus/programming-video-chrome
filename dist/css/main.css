@@ -73,12 +73,47 @@ table {
 }
 
 body {
-	background: #ccc;
+	background: white;
+	font-family: sans-serif;
 }
 
 /* 2. Content ================================= */
 .content video {
 	width: 100%;
+	line-height: 150%;
+	max-height: 90vh;
+}
+
+.content .video-controls {
+	text-align: center;
+}
+
+.content .video-controls button {
+	padding: 10px 15px;
+	border: 0;
+	border-radius: 5px;
+	background: #ddd;
+	cursor: pointer;
+}
+
+.content .video-controls button:hover {
+	background: #bbb;
+}
+
+.content .video-controls p {
+	margin: 5px 0;
+}
+
+.content .video-controls .progress {
+	width: 100%;
+	height: 10px;
+	background-color: #ccc;
+}
+
+.content .video-controls .progress .progress-bar {
+	background-color: #c20000;
+	width: 0%;
+	height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
