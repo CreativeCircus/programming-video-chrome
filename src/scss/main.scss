@@ -51,6 +51,30 @@ body {
 			&:hover {
 				background: #bbb;
 			}
+
+			@keyframes pulse-green {
+				0%   	{ background-color: #ddd; }
+				50% 	{ background-color: #c3f9c2; }
+				100%   	{ background-color: #ddd; }
+			}
+			@keyframes pulse-red {
+				0%   	{ background-color: #ddd; }
+				50% 	{ background-color: #f9aeae; }
+				100%   	{ background-color: #ddd; }
+			}
+
+			&.play-pause.active {
+				animation-name: pulse-green;
+				animation-duration: 1s;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: infinite;
+			}
+			&.mute-unmute.active {
+				animation-name: pulse-red;
+				animation-duration: 1s;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: infinite;
+			}
 		}
 
 		p {
