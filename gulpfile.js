@@ -2,11 +2,9 @@
 const gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	sass = require('gulp-sass'),
-	concat = require('gulp-concat'),
 	sourcemaps = require('gulp-sourcemaps'),
 	autoprefixer = require('gulp-autoprefixer'),
 	babel = require('gulp-babel'),
-	eslint = require('gulp-eslint'),
 	changed = require('gulp-changed'),
 	imagemin = require('gulp-imagemin'),
 	htmllint = require('gulp-htmllint'),
@@ -16,7 +14,6 @@ const gulp = require('gulp'),
 	gulpFn  = require('gulp-fn'),
 	axios = require('axios'),
 	fs = require('fs'),
-	util = require('util'),
 	browserSync = require('browser-sync').create()
 
 
@@ -89,6 +86,8 @@ gulp.task('sass-compile', (done) => {
 // into older, more broadly compatible (ES5) JavaScript files in dist
 gulp.task('js-compile', (done) => {
 	watch('src/js/**/*.js') // watch these files
+		// .pipe(eslint()) // uncomment for full JS styleguide/error checking
+		// .pipe(eslint.formatEach('pretty')) // uncomment for full JS styleguide/error checking
 		.pipe(plumber())
 		.pipe(sourcemaps.init()) // make sourcemaps for chrome devtools
 		.pipe(babel())
