@@ -25,6 +25,12 @@ var $progressBar = document.querySelector('.progress-bar');
 var $fullScreen = document.querySelector('.full-screen');
 var $back15 = document.querySelector('.back-15');
 var $forward15 = document.querySelector('.forward-15');
+var $playlist = document.querySelector('.playlist');
+videosData.forEach(function (videoData) {
+  var $thumb = document.createElement('img');
+  $thumb.src = videoData.video;
+  $playlist.appendChild($thumb);
+});
 
 if (!$video.requestFullscreen && !$video.webkitRequestFullscreen) {
   $fullScreen.style.display = "none";

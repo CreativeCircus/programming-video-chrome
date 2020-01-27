@@ -20,24 +20,32 @@ let videosData = [{
 	},
 ]
 
-let $video = document.querySelector('video');
-let $playPause = document.querySelector('.play-pause');
-let $muteUnmute = document.querySelector('.mute-unmute');
-let $time = document.querySelector('.time');
-let $progressBar = document.querySelector('.progress-bar');
-let $fullScreen = document.querySelector('.full-screen');
-let $back15 = document.querySelector('.back-15');
-let $forward15 = document.querySelector('.forward-15');
+let $video = document.querySelector('video')
+let $playPause = document.querySelector('.play-pause')
+let $muteUnmute = document.querySelector('.mute-unmute')
+let $time = document.querySelector('.time')
+let $progressBar = document.querySelector('.progress-bar')
+let $fullScreen = document.querySelector('.full-screen')
+let $back15 = document.querySelector('.back-15')
+let $forward15 = document.querySelector('.forward-15')
+let $playlist = document.querySelector('.playlist')
+
+videosData.forEach((videoData) => {
+	let $thumb = document.createElement('img')
+	$thumb.src = videoData.video
+	$playlist.appendChild($thumb)
+})
+
 
 if (!$video.requestFullscreen && !$video.webkitRequestFullscreen) {
-	$fullScreen.style.display = "none";
+	$fullScreen.style.display = "none"
 }
 $back15.addEventListener("click", () => {
-	$video.currentTime -= 15;
-});
+	$video.currentTime -= 15
+})
 $forward15.addEventListener("click", () => {
-	$video.currentTime += 15;
-});
+	$video.currentTime += 15
+})
 
 $fullScreen.addEventListener("click", () => {
 	if ($video.requestFullscreen) {
@@ -53,22 +61,22 @@ $fullScreen.addEventListener("click", () => {
 
 $playPause.addEventListener('click', () => {
 	if ($video.paused) {
-		$video.play();
-		$playPause.classList.add("active");
+		$video.play()
+		$playPause.classList.add("active")
 	} else { // it must be playing already
 		$video.pause()
-		$playPause.classList.remove("active");
+		$playPause.classList.remove("active")
 	}
 })
 
 
 $muteUnmute.addEventListener('click', () => {
 	if ($video.muted) {
-		$video.muted = false;
-		$muteUnmute.classList.remove("active");
+		$video.muted = false
+		$muteUnmute.classList.remove("active")
 	} else {
-		$video.muted = true;
-		$muteUnmute.classList.add("active");
+		$video.muted = true
+		$muteUnmute.classList.add("active")
 	}
 })
 
@@ -77,9 +85,9 @@ $video.addEventListener("timeupdate", () => {
 	console.log("timeupdate", $video.currentTime)
 
 	// https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement
-	$time.innerHTML = formatTime($video.currentTime) + " of " + formatTime($video.duration);
+	$time.innerHTML = formatTime($video.currentTime) + " of " + formatTime($video.duration)
 
-	$progressBar.style.width = ($video.currentTime / $video.duration) * 100 + "%";
+	$progressBar.style.width = ($video.currentTime / $video.duration) * 100 + "%"
 
 })
 
@@ -90,27 +98,27 @@ $video.addEventListener("timeupdate", () => {
 
 
 let formatTime = function (s) {
-	let m = 0;
-	let h = 0;
-	s = Math.floor(s);
+	let m = 0
+	let h = 0
+	s = Math.floor(s)
 
 	while (s >= 60) {
-		s -= 60;
-		m++;
+		s -= 60
+		m++
 	}
 	while (m >= 60) {
-		m -= 60;
-		h++;
+		m -= 60
+		h++
 	}
 
-	s = String(s);
+	s = String(s)
 	s = s.padStart(2, "0")
 
 	if (h) {
-		m = String(m);
+		m = String(m)
 		m = m.padStart(2, "0")
-		return h + ":" + m + ":" + s;
+		return h + ":" + m + ":" + s
 	} else {
-		return m + ":" + s;
+		return m + ":" + s
 	}
 }
