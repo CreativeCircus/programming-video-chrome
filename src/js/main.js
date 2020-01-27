@@ -1,5 +1,25 @@
+let videosData = [{
+		name: 'City Arial fly over',
+		video: 'dist/video/city.mp4',
+		thumb: 'dist/img/city.mp4',
+	},
+	{
+		name: 'Earth from ISS',
+		video: 'dist/video/earth.mp4',
+		thumb: 'dist/img/earth.mp4',
+	},
+	{
+		name: 'Rain',
+		video: 'dist/video/rain.mp4',
+		thumb: 'dist/img/rain.mp4',
+	},
+	{
+		name: 'VU Meters',
+		video: 'dist/video/vu.mp4',
+		thumb: 'dist/img/vu.mp4',
+	},
+]
 
-let $video = document.querySelector('video'); // ideally, this would be more specific. What if there was more than one video?
 let $playPause = document.querySelector('.play-pause');
 let $muteUnmute = document.querySelector('.mute-unmute');
 let $time = document.querySelector('.time');
@@ -8,14 +28,14 @@ let $fullScreen = document.querySelector('.full-screen');
 let $back15 = document.querySelector('.back-15');
 let $forward15 = document.querySelector('.forward-15');
 
-if (!$video.requestFullscreen && !$video.webkitRequestFullscreen ) {
+if (!$video.requestFullscreen && !$video.webkitRequestFullscreen) {
 	$fullScreen.style.display = "none";
 }
 $back15.addEventListener("click", () => {
 	$video.currentTime -= 15;
 });
 $forward15.addEventListener("click", () => {
-	$video.currentTime += 15;	
+	$video.currentTime += 15;
 });
 
 $fullScreen.addEventListener("click", () => {
@@ -58,7 +78,7 @@ $video.addEventListener("timeupdate", () => {
 	// https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement
 	$time.innerHTML = formatTime($video.currentTime) + " of " + formatTime($video.duration);
 
-	$progressBar.style.width = ($video.currentTime / $video.duration) * 100 + "%"; 
+	$progressBar.style.width = ($video.currentTime / $video.duration) * 100 + "%";
 
 })
 
@@ -68,7 +88,7 @@ $video.addEventListener("timeupdate", () => {
 
 
 
-let formatTime = function(s) {
+let formatTime = function (s) {
 	let m = 0;
 	let h = 0;
 	s = Math.floor(s);
@@ -88,9 +108,8 @@ let formatTime = function(s) {
 	if (h) {
 		m = String(m);
 		m = m.padStart(2, "0")
-		return h + ":" + m  + ":" + s; 
+		return h + ":" + m + ":" + s;
 	} else {
-		return m  + ":" + s;
+		return m + ":" + s;
 	}
 }
-

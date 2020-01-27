@@ -78,17 +78,41 @@ body {
 }
 
 /* 2. Content ================================= */
-.content video {
-	width: 100%;
-	line-height: 150%;
-	max-height: 90vh;
+.video-player {
+	display: flex;
+	flex-wrap: wrap;
 }
 
-.content .video-controls {
+.video-player video {
+	background-color: black;
+	width: calc(100vw - 250px);
+	min-height: calc((100vw - 250px) * 0.5625);
+}
+
+.video-player .playlist {
+	width: 250px;
+	background: #ccc;
+}
+
+.video-player .controls {
+	width: 100%;
 	text-align: center;
 }
 
-.content .video-controls button {
+.video-player .controls .progress {
+	width: 100%;
+	height: 10px;
+	background-color: #aaa;
+	margin-bottom: 10px;
+}
+
+.video-player .controls .progress .progress-bar {
+	background-color: #c20000;
+	width: 0%;
+	height: 100%;
+}
+
+.video-player .controls button {
 	padding: 10px 15px;
 	border: 0;
 	border-radius: 5px;
@@ -96,7 +120,7 @@ body {
 	cursor: pointer;
 }
 
-.content .video-controls button:hover {
+.video-player .controls button:hover {
 	background: #bbb;
 }
 
@@ -148,7 +172,7 @@ body {
 	}
 }
 
-.content .video-controls button.play-pause.active {
+.video-player .controls button.play-pause.active {
 	-webkit-animation-name: pulse-green;
 	        animation-name: pulse-green;
 	-webkit-animation-duration: 1s;
@@ -159,7 +183,7 @@ body {
 	        animation-iteration-count: infinite;
 }
 
-.content .video-controls button.mute-unmute.active {
+.video-player .controls button.mute-unmute.active {
 	-webkit-animation-name: pulse-red;
 	        animation-name: pulse-red;
 	-webkit-animation-duration: 1s;
@@ -170,20 +194,8 @@ body {
 	        animation-iteration-count: infinite;
 }
 
-.content .video-controls p {
+.video-player .controls p {
 	margin: 5px 0;
-}
-
-.content .video-controls .progress {
-	width: 100%;
-	height: 10px;
-	background-color: #ccc;
-}
-
-.content .video-controls .progress .progress-bar {
-	background-color: #c20000;
-	width: 0%;
-	height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
