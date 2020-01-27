@@ -32,7 +32,7 @@ let $playlist = document.querySelector('.playlist')
 
 videosData.forEach((videoData) => {
 	let $thumb = document.createElement('img')
-	$thumb.src = videoData.video
+	$thumb.src = videoData.thumb
 	$playlist.appendChild($thumb)
 })
 

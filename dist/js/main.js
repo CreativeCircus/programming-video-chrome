@@ -28,7 +28,7 @@ var $forward15 = document.querySelector('.forward-15');
 var $playlist = document.querySelector('.playlist');
 videosData.forEach(function (videoData) {
   var $thumb = document.createElement('img');
-  $thumb.src = videoData.video;
+  $thumb.src = videoData.thumb;
   $playlist.appendChild($thumb);
 });
 
