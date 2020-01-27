@@ -20,6 +20,7 @@ let videosData = [{
 	},
 ]
 
+let $video = document.querySelector('video');
 let $playPause = document.querySelector('.play-pause');
 let $muteUnmute = document.querySelector('.mute-unmute');
 let $time = document.querySelector('.time');
