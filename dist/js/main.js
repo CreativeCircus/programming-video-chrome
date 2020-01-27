@@ -3,19 +3,19 @@
 var videosData = [{
   name: 'City Arial fly over',
   video: 'dist/video/city.mp4',
-  thumb: 'dist/img/city.mp4'
+  thumb: 'dist/img/city.png'
 }, {
   name: 'Earth from ISS',
   video: 'dist/video/earth.mp4',
-  thumb: 'dist/img/earth.mp4'
+  thumb: 'dist/img/earth.png'
 }, {
   name: 'Rain',
   video: 'dist/video/rain.mp4',
-  thumb: 'dist/img/rain.mp4'
+  thumb: 'dist/img/rain.png'
 }, {
   name: 'VU Meters',
   video: 'dist/video/vu.mp4',
-  thumb: 'dist/img/vu.mp4'
+  thumb: 'dist/img/vu.png'
 }];
 var $video = document.querySelector('video');
 var $playPause = document.querySelector('.play-pause');
