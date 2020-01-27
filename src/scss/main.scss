@@ -40,8 +40,8 @@ body {
 	video {
 		// width: 100%;
 		background-color: black;
-		width: calc(100vw - 250px);
-		min-height: calc((100vw - 250px) * 0.5625);
+		width: calc(100% - 250px);
+		min-height: calc((100% - 250px) * 0.5625);
 	}
 
 	.playlist {
