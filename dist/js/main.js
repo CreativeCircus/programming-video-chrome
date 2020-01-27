@@ -30,6 +30,10 @@ videosData.forEach(function (videoData) {
   var $thumb = document.createElement('img');
   $thumb.src = videoData.thumb;
   $playlist.appendChild($thumb);
+  $thumb.addEventListener('click', function () {
+    $video.src = videoData.video;
+    $video.play();
+  });
 });
 
 if (!$video.requestFullscreen && !$video.webkitRequestFullscreen) {

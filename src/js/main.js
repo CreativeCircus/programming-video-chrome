@@ -34,6 +34,10 @@ videosData.forEach((videoData) => {
 	let $thumb = document.createElement('img')
 	$thumb.src = videoData.thumb
 	$playlist.appendChild($thumb)
+	$thumb.addEventListener('click', () => {
+		$video.src = videoData.video
+		$video.play()
+	})
 })
 
 
